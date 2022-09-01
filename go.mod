@@ -1,4 +1,4 @@
-module github.com/sevco/zapdog
+module github.com/marusso1/zapdog
 
 go 1.16
 
