@@ -95,7 +95,7 @@ func ddURL(base string, options Options) (string, error) {
 func (d *DataDogLogger) Write(p []byte) (n int, err error) {
 	d.mutex.Lock()
 	d.Lines = append(d.Lines, DataDogLog{
-		Message: string(p),
+		Message: time.Now().Format(time.RFC3339Nano) + ": " + string(p),
 	})
 	d.mutex.Unlock()
 	return len(p), nil
